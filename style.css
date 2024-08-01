@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sora:wght@100..800&display=swap");
+:root {
+  --font-size-base: 62.5%;
+  /* 
+   Set the base font size for the document to 62.5% of the browser's default font size.
+   This is done to make the calculation of font sizes easier.
+   The default font size in most browsers is 16px.
+   62.5% of 16px is 10px (16px * 0.625 = 10px).
+   Therefore, setting 1rem to 10px simplifies calculations:
+   - 1rem = 10px
+   - 1.6rem = 16px
+   - 2.4rem = 24px
+  */
+  --primary-color: #007aff;
+  --seconday-color: #ffffff;
+  --text-color: var(--primary-color);
+  --background-color: var(--seconday-color);
+
+  /* Responsive font sizes based on base font size */
+  --font-size-sm: 1.4rem; /* 14px */
+  --font-size-md: 1.6rem; /* 16px */
+  --font-size-lg: 2rem; /* 20px */
+  --font-size-xl: 2.4rem; /* 24px */
+  --font-size-xxl: 3rem; /* 32px */
+
+  --font-family: "Sora", sans-serif;
+}
+
+/*------------------ Base Styles -----------------------*/
+
+html {
+  font-size: var(--font-size-base);
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: var(--font-family);
+  line-height: 1.5;
+  background-color: var(--seconday-color);
+  color: var(--text-color);
+}
+.wrapper {
+  margin: 1rem 9.6rem;
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/*------------------ Section Styles -----------------------*/
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-name {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+.navbar-links li {
+  font-size: var(--font-size-md);
+  margin: 0 1.6rem;
+  font-weight: 400;
+}
+
+.navbar-download-btn {
+  background: var(--primary-color);
+  padding: 1.2rem 1.6rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.navbar-download-btn a {
+  font-size: var(--font-size-md);
+  color: var(--seconday-color);
+  font-weight: 500;
+}
+.navbar-download-btn img {
+  width: 16px;
+  height: auto;
+}
+
+.link-btn-wrapper {
+  display: flex;
+  gap: 3rem;
+}
+
+#navbar-toggle {
+  display: none;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%; /* Adjust width as needed */
+  height: 100%;
+  background: var(--primary-color);
+  color: white;
+  transform: translateX(100%); /* Hide off-screen */
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  transform: translateX(0); /* Show sidebar */
+}
+
+/* Centering content vertically */
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center */
+  height: 100%;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.sidebar-close {
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-links li {
+  margin: 1rem 0;
+}
+
+.sidebar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: var(--font-size-md);
+}
+
+.sidebar-download-btn {
+  background: #ffffff;
+  z-index: 999;
+  padding: 1.2rem 1.6rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.sidebar-download-btn a {
+  font-size: var(--font-size-md);
+  color: var(--primary-color);
+  font-weight: 500;
+}
+.sidebar-download-btn img {
+  width: 16px;
+  height: auto;
+  color: ;
+}
+@media (max-width: 948px) {
+  .wrapper {
+    margin: 1rem 5.2rem;
+  }
+  #navbar-toggle {
+    display: block;
+  }
+  .link-btn-wrapper {
+    display: none;
+  }
+}
+
+/* Hero Area*/
+.hero {
+  /* border: 0.5px solid var(--primary-color); */
+  display: flex;
+  justify-content: space-between;
+  height: 50rem;
+}
+
+.hero-content {
+  /* border: 0.5px solid var(--primary-color); */
+  display: flex;
+  align-items: center;
+  flex-grow: 2;
+}
+.hero-content p {
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+.hero-content p .bold-text {
+  font-weight: 700;
+}
+.hero-content p .outlined-text {
+  font-size: 4rem; /* Example font size */
+  letter-spacing: -2.5px;
+  color: var(--seconday-color);
+  text-shadow: 1px 1px 0px var(--primary-color),
+    /* Shadow for bottom-right */ -1px -1px 0px var(--primary-color),
+    /* Shadow for top-left */ 1px -1px 0px var(--primary-color),
+    /* Shadow for bottom-left */ -1px 1px 0px var(--primary-color); /* Shadow for top-right */
+}
+.hero-image {
+  /* border: 0.5px solid var(--primary-color); */
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 30rem; /* Make sure the width and height are the same */
+  height: 30rem;
+  border-radius: 50%;
+  object-fit: cover; /* Ensures the image covers the area */
+}
