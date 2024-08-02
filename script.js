@@ -1,20 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("navbar-toggle");
-  const sidebar = document.getElementById("sidebar");
-  const close = document.getElementById("sidebar-close");
+const hamburgerIcon = document.querySelector(".navbar-toggle");
+const closeIcon = document.querySelector(".sidebar-close");
+const sideBar = document.querySelector(".sidebar");
 
-  toggle.addEventListener("click", () => {
-    sidebar.classList.add("active");
-  });
+hamburgerIcon.addEventListener("click", function () {
+  sideBar.classList.add("active");
+});
 
-  close.addEventListener("click", () => {
-    sidebar.classList.remove("active");
-  });
-
-  // Optionally, close the sidebar when clicking outside of it
-  document.addEventListener("click", (event) => {
-    if (!sidebar.contains(event.target) && !toggle.contains(event.target)) {
-      sidebar.classList.remove("active");
-    }
-  });
+closeIcon.addEventListener("click", function () {
+  sideBar.classList.remove("active");
 });
