@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Sora";
+  src: url("assets/fonts/Sora-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  --font-size-base: 62.5%;
+  /* 
+   Set the base font size for the document to 62.5% of the browser's default font size.
+   This is done to make the calculation of font sizes easier.
+   The default font size in most browsers is 16px.
+   62.5% of 16px is 10px (16px * 0.625 = 10px).
+   Therefore, setting 1rem to 10px simplifies calculations:
+   - 1rem = 10px
+   - 1.6rem = 16px
+   - 2.4rem = 24px
+  */
+  --primary-color: #007aff;
+  --seconday-color: #ffffff;
+  --text-color: var(--primary-color);
+  --background-color: var(--seconday-color);
+
+  /* Responsive font sizes based on base font size */
+  --font-size-sm: 1.4rem; /* 14px */
+  --font-size-md: 1.6rem; /* 16px */
+  --font-size-lg: 2rem; /* 20px */
+  --font-size-xl: 2.4rem; /* 24px */
+  --font-size-xxl: 3rem; /* 32px */
+
+  --font-family: "Sora", sans-serif;
+}
+
+/*------------------ Base Styles -----------------------*/
+
+html {
+  font-size: var(--font-size-base);
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: var(--font-family);
+  line-height: 1.5;
+  background-color: var(--seconday-color);
+  color: var(--text-color);
+}
+.wrapper {
+  margin: 1rem 9.6rem;
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}

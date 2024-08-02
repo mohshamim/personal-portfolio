@@ -1,0 +1,122 @@
+/* Hero Area*/
+.hero {
+  /* border: 0.5px solid var(--primary-color); */
+  display: flex;
+  justify-content: space-between;
+  height: 50rem;
+  background: transparent;
+}
+
+.hero-content {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-content p {
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: -2px;
+  margin: 0;
+}
+.hero-content p .bold-text {
+  font-weight: 700;
+}
+.hero-content p .outlined-text {
+  font-size: 4rem; /* Example font size */
+  letter-spacing: -2.5px;
+  color: var(--seconday-color);
+  text-shadow: 1px 1px 0px var(--primary-color),
+    /* Shadow for bottom-right */ -1px -1px 0px var(--primary-color),
+    /* Shadow for top-left */ 1px -1px 0px var(--primary-color),
+    /* Shadow for bottom-left */ -1px 1px 0px var(--primary-color); /* Shadow for top-right */
+}
+
+.hero-image {
+  /* border: 0.5px solid var(--primary-color); */
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 30rem; /* Make sure the width and height are the same */
+  height: 30rem;
+  border-radius: 50%;
+  object-fit: cover; /* Ensures the image covers the area */
+}
+
+/*---------------- Animations ------------------- */
+
+/*Animation - Hero Text*/
+
+.hero-content p {
+  /* Initially hide the paragraph */
+  opacity: 0; /* Make the element fully transparent initially */
+
+  /* Move the paragraph off-screen to the left */
+  transform: translateX(
+    -100%
+  ); /* Shift the element horizontally off-screen to the left by 100% of its width */
+
+  /* Define and apply the animation */
+  animation: slideInBounce 1s forwards; /* Apply the 'slideInBounce' animation over 1 second. 'forwards' ensures the final state is maintained after the animation ends */
+}
+
+/* Define the 'slideInBounce' animation with a bounce effect */
+@keyframes slideInBounce {
+  0% {
+    opacity: 0; /* Start with the element fully transparent */
+    transform: translateX(
+      -100%
+    ); /* Start with the element off-screen to the left */
+  }
+  50% {
+    opacity: 1; /* Make the element fully visible halfway through the animation */
+    transform: translateX(
+      20%
+    ); /* Move the element slightly to the right of its final position to create a bounce effect */
+  }
+  75% {
+    transform: translateX(
+      -10%
+    ); /* Move the element slightly to the left of its final position to create the bounce effect */
+  }
+  100% {
+    opacity: 1; /* Ensure the element is fully visible by the end of the animation */
+    transform: translateX(0); /* Move the element to its final position */
+  }
+}
+
+/* Animation - Hero Image */
+.hero-image img {
+  opacity: 0;
+  transform: translateY(100%);
+  animation: bounceIn 1s ease-out forwards;
+}
+
+/* Keyframes for bounceIn animation */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-15%); /* Moves above the final position */
+  }
+  70% {
+    transform: translateY(5%); /* Moves slightly below the final position */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Final position */
+  }
+}
+
+/* Ensure the parent container does not show scrollbars */
+.hero-image {
+  overflow: hidden; /* Hides anything outside the bounds of the hero image */
+  position: relative; /* Ensure relative positioning for overflow to work */
+}

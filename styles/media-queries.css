@@ -1,0 +1,60 @@
+/* Extra small smartphones */
+@media (max-width: 360px) {
+  .wrapper {
+    margin: 0.4rem 0.8rem;
+  }
+}
+
+/* Small smartphones */
+@media (max-width: 480px) {
+  .wrapper {
+    margin: 0.6rem 1.2rem;
+  }
+}
+
+/* Portrait smartphones */
+@media (max-width: 582px) {
+  .wrapper {
+    margin: 1.2rem 2.2rem;
+  }
+  .hero-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+/* Small tablets and large smartphones */
+@media (max-width: 768px) {
+  .wrapper {
+    margin: 1rem 3rem;
+  }
+  .hero {
+    flex-direction: column; /* Stack content vertically */
+  }
+  .hero-content p {
+    font-size: 3rem !important;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .hero-image img {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+
+/* Tablet screens (portrait) */
+@media (max-width: 948px) {
+  .wrapper {
+    margin: 1rem 5.2rem;
+  }
+  .link-btn-wrapper {
+    display: none; /* Hide links for smaller screens */
+  }
+  .navbar-toggle {
+    display: block; /* Show toggle button for smaller screens */
+  }
+  .hero {
+    height: 36rem;
+  }
+}

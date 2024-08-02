@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/hero.css" />
+    <link rel="stylesheet" href="styles/media-queries.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -52,13 +55,16 @@
       <main>
         <section class="hero">
           <div class="hero-content">
+            <p>Hi, I’m <span class="bold-text">Mohammad Shamim</span></p>
             <p>
-              Hi, I’m
-              <span class="bold-text">Mohammad Shamim <br />{variable}</span>
-              <span class="outlined-text">Developer</span> <br />
-              Based In <span class="bold-text">India.</span>
+              <span class="profile text-animate" id="dynamicText"
+                >Frontend</span
+              >
+              <span class="outlined-text">Developer</span>
             </p>
+            <p>Based In <span class="bold-text">India.</span></p>
           </div>
+
           <div class="hero-image">
             <img src="assets/my-pic.png" alt="" />
           </div>

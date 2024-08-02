@@ -1,0 +1,150 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-name {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+.navbar-name p {
+  transition: transform 0.3s ease-in-out;
+}
+.navbar-download-btn {
+  transition: transform 0.3s ease-in-out;
+}
+.navbar-download-btn:hover,
+.navbar-name p:hover {
+  transform: scale(1.1);
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+.navbar-links li {
+  font-size: var(--font-size-md);
+  margin: 0 1.6rem;
+  font-weight: 400;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  padding: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-links a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+  bottom: -5px;
+  left: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-links a:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+.navbar-download-btn {
+  background: var(--primary-color);
+  padding: 1.2rem 1.6rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.navbar-download-btn a {
+  font-size: var(--font-size-md);
+  color: var(--seconday-color);
+  font-weight: 500;
+}
+.navbar-download-btn img {
+  width: 16px;
+  height: auto;
+}
+
+.link-btn-wrapper {
+  display: flex;
+  gap: 3rem;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%; /* Adjust width as needed */
+  height: 100%;
+  background: var(--primary-color);
+  color: white;
+  transform: translateX(100%); /* Hide off-screen */
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  transform: translateX(0); /* Show sidebar */
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center */
+  height: 100%;
+  align-items: center;
+  gap: 2.4rem;
+}
+.sidebar-close {
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar-links li {
+  margin: 1rem 0;
+}
+.sidebar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: var(--font-size-md);
+}
+.sidebar-download-btn {
+  background: #ffffff;
+  z-index: 999;
+  padding: 1.2rem 1.6rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.sidebar-download-btn a {
+  font-size: var(--font-size-md);
+  color: var(--primary-color);
+  font-weight: 500;
+}
+.sidebar-download-btn img {
+  width: 16px;
+  height: auto;
+}
